@@ -1,32 +1,3 @@
-Skip to content
-Search or jump to…
-Pulls
-Issues
-Marketplace
-Explore
- 
-@FullteaR 
-FullteaR
-/
-factorizer
-Public
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-More
-factorizer/setup.py /
-@FullteaR
-FullteaR edit: src/utils.cpp
-Latest commit 66851a0 on 25 Mar
- History
- 1 contributor
-40 lines (34 sloc)  1.14 KB
-   
 from setuptools import setup, Extension, find_packages
 import os
 import glob
