@@ -30,6 +30,5 @@ setup(
     package_dir = {
         "fastmodinv-py": "src"
     },
-    install_requires = install_requires,
     ext_modules = [ext]
 )
