@@ -1,17 +1,13 @@
-from setuptools import setup, Extension, find_packages
+from setuptools import setup, Extension
 import os
-import glob
 
-sources = [] 
-sources += glob.glob("src/*.cpp")
-sources += glob.glob("src/*.pyx")
 
 root_dir = os.path.abspath(os.path.dirname(__file__))
     
-ext = Extension("fastmodinv-py", 
-    sources = sources,
+ext = Extension("modinv", 
+    sources = ["src/modinv.pyx", "src/modinv_cpp.cpp"],
     language = "c++",
-    extra_compile_args = ["-v", "-std=c++14", "-Wall", "-O3"],
+    extra_compile_args = ["-v", "-std=c++14", "-Wall", "-O3","-lboost_system"],
     extra_link_args = ["-std=c++14"]
 )
 
@@ -19,16 +15,12 @@ with open(os.path.join(root_dir, 'README.md'), "r") as fp:
     long_description = fp.read()
 
 setup(
-    name = "fastmodinv-py",
+    name = "modinv",
     version = "0.0.1",
     author = "Fulltea",
     author_email = "rikuta@furutan.com",
     long_description = long_description,
     long_description_content_type="text/markdown",
     url = "https://github.com/FullteaR/fastmodinv-py",
-    packages = find_packages(where="src"),
-    package_dir = {
-        "fastmodinv-py": "src"
-    },
     ext_modules = [ext]
 )

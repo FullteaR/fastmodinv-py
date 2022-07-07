@@ -1,3 +1,7 @@
 def modinv(a, m):
-    retval = _modinv(str(a).encode(), str(m).encode())
-    return int(retval.decode())
+    cdef:
+        string a_string = str(a).encode()
+        string m_string = str(m).encode()
+        string retval
+    retval = modinv_cpp(a_string, m_string)
+    return int(retval.decode())%m

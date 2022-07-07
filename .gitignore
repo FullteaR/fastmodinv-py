@@ -1,3 +1,5 @@
 .DS_Store
 ignore/
-fastmodinv_py.egg-info/
+modinv.egg-info/
+build/
+src/modinv.cpp
